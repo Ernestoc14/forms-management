@@ -48,10 +48,14 @@ export const RegistrationForm = ({
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      first: "",
-      last: "",
+      nombre: "",
+      apellido: "",
+      cedula: "",
+      fechaNacimiento: "",
+      genero: "",
+      direccion: "",
+      telefono: "",
       email: "",
-      zipcode: "",
     },
   });
 
@@ -103,28 +107,90 @@ export const RegistrationForm = ({
         <div className="flex gap-2">
           <FormField
             control={form.control}
-            name="first"
+            name="nombre"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>First Name</FormLabel>
+                <FormLabel>Nombre</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                <FormDescription>Your first name.</FormDescription>
+                <FormDescription>Escribe tu nombre</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name="last"
+            name="apellido"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Last Name</FormLabel>
+                <FormLabel>Apellido</FormLabel>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
-                <FormDescription>Your last name.</FormDescription>
+                <FormDescription>Escribe tu apellido</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="cedula"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Cedula</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                <FormDescription>Escribe tu Cedula</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="fechaNacimiento"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Fecha de Nacimiento</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                <FormDescription>
+                  Escribe tu Fecha de Nacimiento
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="flex gap-2">
+          <FormField
+            control={form.control}
+            name="genero"
+            render={({ field }) => (
+              <FormItem className=" w-full">
+                <FormLabel>Genero</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                <FormDescription>Escribe tu Genero.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="telefono"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormLabel>Telefono</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                <FormDescription>Escribe tu Telefono.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -132,28 +198,28 @@ export const RegistrationForm = ({
         </div>
         <FormField
           control={form.control}
-          name="zipcode"
+          name="direccion"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Zip Code</FormLabel>
+              <FormLabel>Direccion</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
-              <FormDescription>Your zipcode (NNNNN).</FormDescription>
+              <FormDescription>De su Direccion.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         <FormField
           control={form.control}
-          name="email"
+          name="direccion"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
-              <FormDescription>Your email address.</FormDescription>
+              <FormDescription>Escriba su Emaiil.</FormDescription>
               <FormMessage />
             </FormItem>
           )}

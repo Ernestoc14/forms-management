@@ -42,7 +42,8 @@ export default function Home() {
   };
 
   return (
-    <div className="mx-auto max-w-xl">
+    <div className="mx-auto max-w-xl pt-14">
+      <h2 className="font-bold text-3xl text-center mb-16">Formulario de Registro del Hospital</h2>
       <RegistrationForm
         onDataAction={onDataAction}
         onFormAction={onFormAction}
